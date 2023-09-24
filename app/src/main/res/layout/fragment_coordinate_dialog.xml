@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".presentation.coordinates.CoordinateDialog">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/latitude_textview"/>
+
+    <EditText
+        android:id="@+id/edittext_latitude"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:inputType="number"
+        android:hint="@string/latitude_hint"
+        android:importantForAutofill="no"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/longitude_textview"/>
+
+    <EditText
+        android:id="@+id/edittext_longitude"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:inputType="number"
+        android:hint="@string/longitude_hint"
+        android:importantForAutofill="no"/>
+
+</LinearLayout>

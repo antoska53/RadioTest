@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RadioTest</string>
+    <string name="save_coordinates">Сохранить координаты</string>
+    <string name="list_coordinates">Список координат</string>
+    <string name="title_dialog">Координаты</string>
+    <string name="save_button">Сохранить</string>
+    <string name="latitude_textview">Широта</string>
+    <string name="latitude_hint">59.945933</string>
+    <string name="longitude_textview">Долгота</string>
+    <string name="longitude_hint">30.320045</string>
+</resources>

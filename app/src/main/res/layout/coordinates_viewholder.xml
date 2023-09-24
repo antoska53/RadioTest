@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:strokeColor="#565665"
+    app:strokeWidth="0.5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Точка 1" />
+
+        <TextView
+            android:id="@+id/textview_coordinate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="59.1234, 60.1234" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
