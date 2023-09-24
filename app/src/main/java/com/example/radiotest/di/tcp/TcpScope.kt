@@ -1,3 +1,6 @@
 package com.example.radiotest.di.tcp
 
-annotation class TcpScope()
+import javax.inject.Scope
+
+@Scope
+annotation class TcpScope

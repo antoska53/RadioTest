@@ -1,5 +1,6 @@
 package com.example.radiotest.presentation.map
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -14,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.radiotest.R
 import com.example.radiotest.databinding.FragmentMapBinding
 import com.example.radiotest.presentation.App
+import com.example.radiotest.presentation.TcpService
 import com.example.radiotest.presentation.coordinates.CoordinateDialog
 import com.yandex.mapkit.Animation
 import com.yandex.mapkit.MapKitFactory
@@ -37,6 +40,7 @@ class MapFragment : Fragment() {
         (activity?.application as App).appComponent.getMapComponent().inject(this)
         super.onCreate(savedInstanceState)
         MapKitFactory.initialize(requireContext())
+        startTcpService()
     }
 
     override fun onCreateView(
@@ -92,6 +96,13 @@ class MapFragment : Fragment() {
         }, viewLifecycleOwner)
     }
 
+    private fun startTcpService(){
+        val intent = Intent(requireContext(), TcpService::class.java)
+        intent.putExtra(SERVER_ADDRESS_KEY, SERVER_ADDRESS)
+        intent.putExtra(SERVER_PORT_KEY, SERVER_PORT)
+        ContextCompat.startForegroundService(requireContext(), intent)
+    }
+
     private fun getCoordinateFromMap(): Point{
         val centerX = binding.mapView.mapWindow.width() / 2f
         val centerY = binding.mapView.mapWindow.height() / 2f
@@ -134,5 +145,9 @@ class MapFragment : Fragment() {
         const val AZIMUTH = 0.0f
         const val TILT = 0.0f
         const val DURATION = 5.0f
+        const val SERVER_ADDRESS = "192.168.1.96"
+        const val SERVER_PORT = 5555
+        const val SERVER_ADDRESS_KEY = "SERVER_ADDRESS"
+        const val SERVER_PORT_KEY = "SERVER_PORT"
     }
 }

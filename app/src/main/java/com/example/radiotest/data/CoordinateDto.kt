@@ -1,4 +1,14 @@
 package com.example.radiotest.data
 
-class CoordinateDto {
-}
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class CoordinateDto (
+    val point: PointDto
+)
+
+@Serializable
+data class PointDto (
+    val lat: String,
+    val long: String
+)

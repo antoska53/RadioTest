@@ -2,7 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
-}
+    id ("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
+    }
 
 android {
     namespace = "com.example.radiotest"
@@ -70,5 +71,7 @@ dependencies {
     ksp("com.google.dagger:dagger-compiler:$daggerVersion")
 
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 
 }
